@@ -22,10 +22,16 @@ export class PhotosComponent {
   selectedCategory = 'all';
 
   images: GalleryItem[] = [
-    { src: 'assets/images/photo-placeholder-1.jpg', caption: 'Wedding moment', category: 'weddings' },
-    { src: 'assets/images/photo-placeholder-2.jpg', caption: 'Fashion portrait', category: 'fashion' },
-    { src: 'assets/images/photo-placeholder-1.jpg', caption: 'Candid portrait', category: 'portraits' },
-    { src: 'assets/images/photo-placeholder-2.jpg', caption: 'Bridal love', category: 'weddings' },
+    {
+      src: 'https://picsum.photos/id/22/800/600',
+      caption: 'Urban Reflections',
+      category: 'urban'
+    },
+    {
+      src: 'https://picsum.photos/id/23/800/600',
+      caption: 'Nature\'s Embrace',
+      category: 'nature'
+    }
   ];
 
   selectedImage?: GalleryItem;

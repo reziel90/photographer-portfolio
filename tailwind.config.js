@@ -7,11 +7,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primaryAccent: '#A0522D', // Sienna
+        lightBg: '#F8F8F8',
+        lightText: '#333333',
+        darkBg: '#121212',
+        darkSurface: '#1E1E1E',
+        darkText: '#E0E0E0',
+        // Keep pastel colors if they are used elsewhere or as secondary accents
         pastelPink: '#F9E5E5',
         pastelBlue: '#E5F0F9',
         pastelGreen: '#E5F9E7',
-        darkBg: '#0d0d0d',
-        darkSurface: '#1a1a1a',
+      },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
       }
     }
   },

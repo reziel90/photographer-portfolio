@@ -18,13 +18,13 @@ export class HomeComponent {
    */
   carouselImages = [
     {
-      source: 'assets/images/hero-placeholder.jpg',
+      source: 'https://picsum.photos/id/1018/1920/1080',
       alt: 'Ethereal fine art photograph placeholder',
       title: 'Capturing moments of magic',
       subtitle: 'Explore weddings, portraits and more'
     },
     {
-      source: 'assets/images/hero-placeholder.jpg',
+      source: 'https://picsum.photos/id/1040/1920/1080',
       alt: 'Dreamy portrait placeholder',
       title: 'Stories told with light',
       subtitle: 'Fine art photography and paintings'

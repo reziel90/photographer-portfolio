@@ -21,10 +21,16 @@ export class PaintingsComponent {
   selectedCategory = 'all';
 
   images: GalleryItem[] = [
-    { src: 'assets/images/painting-placeholder-1.jpg', caption: 'Digital dream', category: 'digital' },
-    { src: 'assets/images/painting-placeholder-2.jpg', caption: 'Traditional sketch', category: 'traditional' },
-    { src: 'assets/images/painting-placeholder-1.jpg', caption: 'Fantasy landscape', category: 'digital' },
-    { src: 'assets/images/painting-placeholder-2.jpg', caption: 'Pastel study', category: 'traditional' },
+    {
+      src: 'https://picsum.photos/id/20/800/600',
+      caption: 'Abstract Dreams',
+      category: 'digital'
+    },
+    {
+      src: 'https://picsum.photos/id/21/800/600',
+      caption: 'Nature\'s Embrace',
+      category: 'traditional'
+    }
   ];
 
   selectedImage?: GalleryItem;

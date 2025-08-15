@@ -1,4 +1,12 @@
 /* Navbar component styles. The navigation is fixed to the top of the page. */
+nav {
+  @apply fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-darkBg/80 backdrop-blur-lg shadow-sm;
+  transition: background-color 0.4s ease-in-out; /* Updated duration */
+}
+nav.scrolled {
+  @apply bg-white dark:bg-darkBg;
+}
+
 a {
   @apply text-gray-700 dark:text-gray-200;
 }
