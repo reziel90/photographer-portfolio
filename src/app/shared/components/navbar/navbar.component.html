@@ -1,0 +1,42 @@
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-darkSurface/90 backdrop-blur shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Brand / logo -->
+      <div class="flex-shrink-0 text-xl font-bold tracking-wide select-none">
+        Photographer&nbsp;Portfolio
+      </div>
+
+      <!-- Desktop menu -->
+      <div class="hidden md:flex space-x-6">
+        <a routerLink="/" routerLinkActive="text-pastelPink" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-pastelPink transition-colors">Home</a>
+        <a routerLink="/about" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">About</a>
+        <a routerLink="/photos" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Photos</a>
+        <a routerLink="/paintings" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Paintings</a>
+        <a routerLink="/contact" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Contact</a>
+      </div>
+
+      <!-- Right side icons -->
+      <div class="flex items-center space-x-4">
+        <!-- Theme toggle -->
+        <button type="button" (click)="toggleTheme()" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none" aria-label="Toggle dark mode">
+          <i class="pi" [ngClass]="isDark ? 'pi-sun' : 'pi-moon'"></i>
+        </button>
+        <!-- Mobile menu button -->
+        <button type="button" class="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none" (click)="toggleMenu()" aria-label="Toggle navigation">
+          <i class="pi" [ngClass]="menuOpen ? 'pi-times' : 'pi-bars'"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div *ngIf="menuOpen" class="md:hidden bg-white dark:bg-darkSurface border-t border-gray-200 dark:border-gray-700">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a routerLink="/" routerLinkActive="text-pastelPink" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Home</a>
+      <a routerLink="/about" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">About</a>
+      <a routerLink="/photos" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Photos</a>
+      <a routerLink="/paintings" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Paintings</a>
+      <a routerLink="/contact" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>

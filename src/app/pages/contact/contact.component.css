@@ -1,0 +1,7 @@
+/* Contact page styles */
+label {
+  @apply text-gray-700 dark:text-gray-300;
+}
+input, textarea {
+  @apply bg-white dark:bg-darkSurface text-gray-900 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded p-2;
+}

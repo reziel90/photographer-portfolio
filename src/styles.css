@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PrimeNG theme imports. A light theme is loaded by default; when the `dark`
+   class is present on the `<html>` element the dark variants defined in
+   Tailwind will override colours. */
+@import 'primeng/resources/themes/saga-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
+@import 'primeicons/primeicons.css';
+
+/* Global typography. The pastel palette keeps typography subtle so that the
+   imagery remains front and centre, while the dark mode classes invert
+   contrast for legibility. */
+body {
+  @apply bg-white text-gray-900 dark:bg-darkBg dark:text-gray-200 font-sans;
+}
+
+/* Utility classes for headings used across pages. */
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold mb-4 text-center;
+}
+.section-subtitle {
+  @apply text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 text-center;
+}

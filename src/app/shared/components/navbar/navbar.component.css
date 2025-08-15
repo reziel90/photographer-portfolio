@@ -1,0 +1,8 @@
+/* Navbar component styles. The navigation is fixed to the top of the page. */
+a {
+  @apply text-gray-700 dark:text-gray-200;
+}
+
+a:hover {
+  @apply text-pastelPink;
+}

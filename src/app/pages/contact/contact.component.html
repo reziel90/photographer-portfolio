@@ -1,0 +1,95 @@
+<section class="max-w-5xl mx-auto py-12 px-4 md:px-8 lg:px-16">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-subtitle">Get in touch via email, phone or social media</p>
+
+  <div class="grid gap-8 md:grid-cols-2">
+    <!-- Contact information -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Reach us</h3>
+      <p class="mb-2 flex items-center"><i class="pi pi-envelope mr-2"></i><span>email@example.com</span></p>
+      <p class="mb-2 flex items-center"><i class="pi pi-phone mr-2"></i><span>+39 000 000 0000</span></p>
+      <div class="flex space-x-4 mt-4">
+        <a href="#" aria-label="Instagram"><i class="pi pi-instagram text-2xl"></i></a>
+        <a href="#" aria-label="Facebook"><i class="pi pi-facebook text-2xl"></i></a>
+        <a href="#" aria-label="Twitter"><i class="pi pi-twitter text-2xl"></i></a>
+      </div>
+    </div>
+
+    <!-- Contact form -->
+    <div>
+      <form #contactForm="ngForm" (ngSubmit)="submit()" class="space-y-4" novalidate>
+        <div>
+          <label class="block mb-1 font-medium" for="name">Name</label>
+          <!--
+            Expose the ngModel directive as nameCtrl so we can easily check
+            validity in the template. Required fields will display a small
+            error message when the input is invalid and has been touched.
+          -->
+          <input
+            pInputText
+            id="name"
+            name="name"
+            [(ngModel)]="contact.name"
+            #nameCtrl="ngModel"
+            required
+            class="w-full"
+          />
+          <small *ngIf="nameCtrl.invalid && (nameCtrl.dirty || nameCtrl.touched)" class="text-red-600 dark:text-red-400">
+            Name is required.
+          </small>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium" for="email">Email</label>
+          <input
+            pInputText
+            id="email"
+            name="email"
+            [(ngModel)]="contact.email"
+            #emailCtrl="ngModel"
+            required
+            type="email"
+            class="w-full"
+          />
+          <small *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)" class="text-red-600 dark:text-red-400">
+            A valid email address is required.
+          </small>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium" for="phone">Phone</label>
+          <input
+            pInputText
+            id="phone"
+            name="phone"
+            [(ngModel)]="contact.phone"
+            #phoneCtrl="ngModel"
+            pattern="^[- +()0-9]*$"
+            class="w-full"
+          />
+          <small *ngIf="phoneCtrl.invalid && (phoneCtrl.dirty || phoneCtrl.touched)" class="text-red-600 dark:text-red-400">
+            Please enter only numbers, spaces or common phone symbols.
+          </small>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium" for="message">Message</label>
+          <textarea
+            pInputTextarea
+            id="message"
+            name="message"
+            [(ngModel)]="contact.message"
+            #messageCtrl="ngModel"
+            rows="5"
+            required
+            class="w-full"
+          ></textarea>
+          <small *ngIf="messageCtrl.invalid && (messageCtrl.dirty || messageCtrl.touched)" class="text-red-600 dark:text-red-400">
+            A message is required.
+          </small>
+        </div>
+        <button type="submit" class="p-button p-component" [disabled]="!contactForm.form.valid">
+          <span class="p-button-label">Send Message</span>
+        </button>
+        <p *ngIf="submitted" class="mt-4 text-green-600 dark:text-green-400">Thank you for your message! We will get back to you soon.</p>
+      </form>
+    </div>
+  </div>
+</section>

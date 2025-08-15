@@ -1,0 +1,4 @@
+/* Extra top padding is applied to account for the fixed navigation bar. */
+main {
+  padding-top: 4rem;
+}
