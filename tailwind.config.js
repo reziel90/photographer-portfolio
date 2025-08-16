@@ -12,7 +12,7 @@ module.exports = {
         lightText: '#333333',
         darkBg: '#121212',
         darkSurface: '#1E1E1E',
-        darkText: '#E0E0E0',
+        darkText: '#C0C0C0',
         // Keep pastel colors if they are used elsewhere or as secondary accents
         pastelPink: '#F9E5E5',
         pastelBlue: '#E5F0F9',

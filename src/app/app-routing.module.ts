@@ -7,17 +7,18 @@ import { PhotosComponent } from './pages/photos/photos.component';
 import { PaintingsComponent } from './pages/paintings/paintings.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
+
 /**
  * Defines the client‑side routes for the portfolio. Each route is bound to a
  * single page component. A wildcard route redirects unknown URLs back to the
  * home page.
  */
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'photos', component: PhotosComponent },
-  { path: 'paintings', component: PaintingsComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: '', component: HomeComponent }, // Apply guard
+  { path: 'about', component: AboutComponent }, // Apply guard
+  { path: 'photos', component: PhotosComponent }, // Apply guard
+  { path: 'paintings', component: PaintingsComponent }, // Apply guard
+  { path: 'contact', component: ContactComponent }, // Apply guard
   { path: '**', redirectTo: '' },
 ];
 
@@ -25,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'top' })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {} 

@@ -1,4 +1,3 @@
-
 import { CommonModule } from '@angular/common';
 
 import { NgModule } from '@angular/core';
@@ -22,6 +21,9 @@ import { AppComponent } from './app.component';
 // Shared components and directives
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { LazyLoadDirective } from './shared/directives/lazy-load.directive';
+import { ShutterOverlayComponent } from './shared/shutter-overlay/shutter-overlay.component';
+import { ShutterLinkDirective } from './shared/shutter-link.directive';
+
 
 // Page components
 import { HomeComponent } from './pages/home/home.component';
@@ -29,6 +31,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { PhotosComponent } from './pages/photos/photos.component';
 import { PaintingsComponent } from './pages/paintings/paintings.component';
 import { ContactComponent } from './pages/contact/contact.component';
+
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     PhotosComponent,
     PaintingsComponent,
     ContactComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -58,8 +63,13 @@ import { ContactComponent } from './pages/contact/contact.component';
     DialogModule,
     InputTextModule,
     InputTextareaModule,
+
+    ShutterOverlayComponent,
+    ShutterLinkDirective,
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

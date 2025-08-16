@@ -1,0 +1,15 @@
+feat: Implement UI/UX and performance enhancements
+
+This commit introduces several improvements across the project:
+
+- **Image Handling:**
+  - Replaced all placeholder images with dynamic Picsum URLs.
+  - Extended lazy loading to all images using the `appLazyLoad` directive.
+- **Animations & Transitions:**
+  - Enhanced navbar scroll transition duration.
+  - Added subtle hover effects (shadow and scale) to featured work items on the home page.
+  - Introduced CSS classes for fade-in/slide-up animations for content sections (requires JS implementation).
+- **UI/UX Refinements:**
+  - Updated typography to use Google Fonts (Playfair Display for headings, Lato for body) by configuring Tailwind CSS and updating `index.html` and `styles.css`.
+  - Adjusted vertical spacing in key sections for better visual balance.
+  - Refined the color palette in `tailwind.config.js` and applied new color classes across `styles.css`, `home.component.html`, `about.component.css`, and `contact.component.css`.

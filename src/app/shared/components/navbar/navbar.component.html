@@ -8,11 +8,11 @@
 
       <!-- Desktop menu -->
       <div class="hidden md:flex space-x-6">
-        <a routerLink="/" routerLinkActive="text-pastelPink" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-pastelPink transition-colors">Home</a>
-        <a routerLink="/about" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">About</a>
-        <a routerLink="/photos" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Photos</a>
-        <a routerLink="/paintings" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Paintings</a>
-        <a routerLink="/contact" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Contact</a>
+        <a routerLink appShutterLink="/" routerLinkActive="text-pastelPink" [routerLinkActiveOptions]="{ exact: true }" class="hover:text-pastelPink transition-colors">Home</a>
+        <a routerLink appShutterLink="/about" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">About</a>
+        <a routerLink appShutterLink="/photos" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Photos</a>
+        <a routerLink appShutterLink="/paintings" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Paintings</a>
+        <a routerLink appShutterLink="/contact" routerLinkActive="text-pastelPink" class="hover:text-pastelPink transition-colors">Contact</a>
       </div>
 
       <!-- Right side icons -->
@@ -32,11 +32,11 @@
   <!-- Mobile menu panel -->
   <div *ngIf="menuOpen" class="md:hidden bg-white dark:bg-darkSurface border-t border-gray-200 dark:border-gray-700">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <a routerLink="/" routerLinkActive="text-pastelPink" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Home</a>
-      <a routerLink="/about" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">About</a>
-      <a routerLink="/photos" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Photos</a>
-      <a routerLink="/paintings" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Paintings</a>
-      <a routerLink="/contact" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Contact</a>
+      <a routerLink appShutterLink="/" routerLinkActive="text-pastelPink" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Home</a>
+      <a routerLink appShutterLink="/about" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">About</a>
+      <a routerLink appShutterLink="/photos" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Photos</a>
+      <a routerLink appShutterLink="/paintings" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Paintings</a>
+      <a routerLink appShutterLink="/contact" routerLinkActive="text-pastelPink" (click)="closeMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">Contact</a>
     </div>
   </div>
 </nav>
