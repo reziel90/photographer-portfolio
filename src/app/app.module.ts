@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { OverlayModule } from '@angular/cdk/overlay';
+
 // PrimeNG modules
 import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
@@ -44,7 +46,6 @@ import { ContactComponent } from './pages/contact/contact.component';
     PhotosComponent,
     PaintingsComponent,
     ContactComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -64,6 +65,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     InputTextModule,
     InputTextareaModule,
 
+    OverlayModule,
     ShutterOverlayComponent,
     ShutterLinkDirective,
   ],
