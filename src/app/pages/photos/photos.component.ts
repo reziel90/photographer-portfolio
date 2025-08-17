@@ -12,6 +12,8 @@ interface GalleryItem {
  * opens a lightbox dialog. Images are lazily loaded so that only pictures
  * visible in the viewport are downloaded【260357107566376†L109-L124】.
  */
+import { ShutterTransitionService } from 'src/app/core/services/shutter-transition.service';
+
 @Component({
   selector: 'app-photos',
   templateUrl: './photos.component.html',
@@ -37,6 +39,8 @@ export class PhotosComponent {
   selectedImage?: GalleryItem;
   displayDialog = false;
 
+  constructor(private shutterService: ShutterTransitionService) {}
+
   /**
    * Filter images by the currently selected category.
    */
@@ -52,6 +56,12 @@ export class PhotosComponent {
    */
   openImage(img: GalleryItem): void {
     this.selectedImage = img;
-    this.displayDialog = true;
+    this.shutterService.trigger().subscribe(() => {
+        this.displayDialog = true;
+    });
+  }
+
+  onDialogHide() {
+      this.shutterService.open();
   }
 }

@@ -18,7 +18,7 @@
   </div>
 
   <!-- Lightbox dialog -->
-  <p-dialog [(visible)]="displayDialog" [modal]="true" [dismissableMask]="true" [style]="{width: '80vw'}" contentStyleClass="p-0" [baseZIndex]="10000">
+  <p-dialog [(visible)]="displayDialog" [modal]="true" [dismissableMask]="true" [style]="{width: '80vw'}" contentStyleClass="p-0" [baseZIndex]="10000" (onHide)="onDialogHide()">
     <ng-container *ngIf="selectedImage">
       <img [src]="selectedImage.src" [alt]="selectedImage.caption" class="w-full h-auto rounded-t-md" />
       <div class="p-4 bg-white dark:bg-darkSurface">

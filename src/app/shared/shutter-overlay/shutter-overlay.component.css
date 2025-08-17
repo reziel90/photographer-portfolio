@@ -12,44 +12,54 @@
   pointer-events: auto; /* blocca input durante la transizione */
 }
 
-.overlay { position: absolute; inset: 0; overflow: hidden; }
-
-/* --------- VARIANTE A: CURTAIN ---------- */
-.curtain {
-  position: absolute; top: 0; height: 100%; width: 50vw;
-  background: #000;
-  will-change: transform;
+.overlay {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
 }
-.curtain.left  { left: 0;  transform: translateX(-100%); }
-.curtain.right { right: 0; transform: translateX(100%); }
 
-/* Stati → animazioni */
-.overlay[data-state="closing"] .curtain.left  { animation: curtainCloseLeft   260ms ease-in forwards; }
-.overlay[data-state="closing"] .curtain.right { animation: curtainCloseRight  260ms ease-in forwards; }
-.overlay[data-state="opening"] .curtain.left  { animation: curtainOpenLeft    320ms ease-out forwards; }
-.overlay[data-state="opening"] .curtain.right { animation: curtainOpenRight   320ms ease-out forwards; }
-
-@keyframes curtainCloseLeft  { to   { transform: translateX(0%);     } }
-@keyframes curtainCloseRight { to   { transform: translateX(0%);     } }
-@keyframes curtainOpenLeft   { from { transform: translateX(0%);} to { transform: translateX(-100%);} }
-@keyframes curtainOpenRight  { from { transform: translateX(0%);} to { transform: translateX(100%); } }
-
-/* --------- VARIANTE B: IRIS (opzionale) ---------- */
-.iris { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
-.blade {
+.flap {
+  width: 150vmax;
+  height: 150vmax;
   position: absolute;
-  width: 60vmin; height: 60vmin; background:#000; opacity: 0;
-  transform-origin: 50% 100%;
-  clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
-  rotate: calc(var(--i) * 60deg);
+  bottom: 50%;
+  right: 50%;
+  pointer-events: none;
+  will-change: transform;
+
+  background: linear-gradient(35deg, #555, black);
+  border: solid 4px #999;
+
+  --p: calc(var(--i) / var(--flaps));
+
+  transform-origin: bottom right;
+  transform: rotate(-0.5turn) rotate(calc(1turn * var(--p))) skewX(30deg)
+    translateX(-100%) translateY(90%);
 }
-.overlay[data-state="closing"] .blade {
-  animation: irisClose 280ms ease-in forwards;
-  animation-delay: calc(var(--i) * 12ms);
+
+.overlay[data-state="closing"] .flap {
+    animation: shutter-close 0.9s cubic-bezier(0.5, 0, 0.5, 1) 0.1s;
 }
-.overlay[data-state="opening"] .blade {
-  animation: irisOpen 320ms ease-out forwards;
-  animation-delay: calc((5 - var(--i)) * 10ms);
+
+.overlay[data-state="opening"] .flap {
+    animation: shutter-open 0.9s cubic-bezier(0.5, 0, 0.5, 1) 0.1s;
 }
-@keyframes irisClose { from { transform: scale(.2); opacity:0; } to { transform: scale(1); opacity:1; } }
-@keyframes irisOpen  { from { transform: scale(1);  opacity:1; } to { transform: scale(.2); opacity:0; } }
+
+@keyframes shutter-close {
+    48%,
+    52% {
+      transform: rotate(-0.25turn) rotate(calc(1turn * var(--p))) skewX(30deg)
+        translateX(0%) translateY(0%);
+    }
+}
+
+@keyframes shutter-open {
+    from {
+        transform: rotate(-0.25turn) rotate(calc(1turn * var(--p))) skewX(30deg)
+        translateX(0%) translateY(0%);
+    }
+    to {
+        transform: rotate(-0.5turn) rotate(calc(1turn * var(--p))) skewX(30deg)
+        translateX(-100%) translateY(90%);
+    }
+}
